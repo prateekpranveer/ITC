@@ -1,2 +1,2 @@
 # ITC
-Django Blog
+Django Blog Into the Charm
