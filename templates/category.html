@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+{% for x in cat %}
+{{x.title}} - Into the Charm
+{% endfor %}
+
+{% endblock title %}
+
+{% block search %}
+
+{% endblock search %}
+
+
+
+{% block body %}
+
+
+        <div class="container">
+        <div class="jumbotron">
+        {% for x in cat %}
+            <h1 class="ml-0">{{x.title}}</h1>
+            <P class="ml-0">{{x.description}}</P>
+            <ul class="nav">
+        {% endfor %}
+               
+              </ul>
+            
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        
+    <div class="container hello">
+        {% for x in cat %}
+        <div class="row">
+        {% endfor %}
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in allPosts %}
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{x.header_img.url}}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{x.category}}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{x.title}}</h3></a>
+                            <p class="written-by">Written by <a href="#" class="author-name">{{x.author}}</a></a></p>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+           
+                </div>
+            </div>
+
+
+
+           
+                </div>
+            </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

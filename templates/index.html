@@ -1,0 +1,305 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+Home - Into the Charm
+
+{% endblock title %}
+
+
+
+
+{% block body %}
+
+
+<style>
+
+.date{
+    letter-spacing: 0px !important;
+}
+
+.date-latest{
+    letter-spacing: 0px !important;
+}
+
+</style>
+
+
+    <div class="container-fluid">
+
+        <div class="container hello mt-2">
+            <div class="flex">
+                <div class="main-head">
+                    <h5 class="headingx mr-3 mb-5">SKINCARE</h5>
+                </div>
+                <div class="linex mb-5"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+
+                        {% for x in skincare %}
+                       
+                        <div class="col-md-4 pb-4">
+                            <div class="img">
+                                <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                            </div>
+                            <div class="details">
+                                <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                                <a href="#" class="date">{{x.posted}}</a>
+                                <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                                <div class="author">
+                                    <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                        </a></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <div class="col-md-3 pb-4 gr">
+
+                    <div class="details2">
+                        <h4 class="mb-3 mt-3 ml-3 mr-3 latest">LATEST POSTS</h4>
+                        <hr>
+
+                    
+                    {% for posts in allPosts %}
+
+                        <div class="posts">
+                            <a href="{% url 'category' posts.category %}" class="cat-latest">{{ posts.category }}</a>
+                            <a href="" class="date-latest">{{ posts.posted }}</a>
+                            <a href="{% url 'single-post' posts.slug %}"><h4 class="heading-latest">{{ posts.title }}</h4></a>
+                            <hr>
+                        </div>
+
+
+                    {% endfor %}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container hello mt-0">
+        <div class="flex">
+            <div class="main-head">
+                <h4 class="headingx mr-3 mb-5">HAIRCARE</h4>
+            </div>
+            <div class="linex mb-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in haircare %}
+
+
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                            <div class="author">
+                                <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                    </a></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container hello mt-0">
+        <div class="flex">
+            <div class="main-head">
+                <h4 class="headingx mr-3 mb-5">DIY</h4>
+            </div>
+            <div class="linex mb-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in DIY %}
+
+
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                            <div class="author">
+                                <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                    </a></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container hello mt-0">
+        <div class="flex">
+            <div class="main-head">
+                <h4 class="headingx mr-3 mb-5">SUSTAINIBILITY</h4>
+            </div>
+            <div class="linex mb-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in sustanibility %}
+
+
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                            <div class="author">
+                                <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                    </a></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container hello mt-0">
+        <div class="flex">
+            <div class="main-head">
+                <h4 class="headingx mr-3 mb-5">WELLNESS</h4>
+            </div>
+            <div class="linex mb-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in wellness %}
+
+
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                            <div class="author">
+                                <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                    </a></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container hello mt-0">
+        <div class="flex">
+            <div class="main-head">
+                <h4 class="headingx mr-3 mb-5">MEDIATATION</h4>
+            </div>
+            <div class="linex mb-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    {% for x in meditation %}
+
+
+
+                    <div class="col-md-3 pb-4">
+                        <div class="img">
+                            <img src="{{ x.header_img.url }}" class="img-fluid imgn" alt="">
+                        </div>
+                        <div class="details">
+                            <a href="{% url 'category' x.category %}" class="cats">{{ x.category }}</a>
+                            <a href="" class="date">{{x.posted}}</a>
+                            <a href="{% url 'single-post' x.slug %}"><h3 class="heading">{{ x.title }}</h3></a>
+                            <div class="author">
+                                <p class="written-by">Written by <a href="#" class="author-name">{{ x.author }}
+                                    </a></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+   
+
+
+
+{% endblock body %}
+
+
+

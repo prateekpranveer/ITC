@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% for a in slugpost %}
+{{a.title}} - Into the Charm
+{% endfor %}
+
+{% endblock title %}
+
+{% block body %}
+
+{% for x in slugpost %}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="cat">
+                <a href="{% url 'category' x.category %}" class="cats2">{{x.category}}</a>
+            </div>
+            <div class="headingx mt-2">
+                <h2>{{x.title}}</h2>
+            </div>
+            <div class="author ">
+                <p class="written-by">Written by <a href="#" class="author-name">{{x.author}}</a></a></p> <small class="updated-on">UPDATED ON {{x.posted}}</small>
+            </div>
+
+            <div class="xline">
+                <p>I independently research, test, and recommend the best products; you can learn more about our review process here. We may receive commissions on purchases made from our chosen links.</p>
+            </div>
+
+            <div class="imgx">
+                <img src="{{x.header_img.url}}" class="img-fluid" alt="">
+            </div>
+
+            <div class="body mt-3 ml-3 mr-3">
+              {{x.body|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}
+
+
+
+<!---related-->
+
+<div class="container-fluid">
+
+
+<div class="container hello mt-4">
+    <h4 class="headingx mb-4 mt-1">You may also Like</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+
+                {% for x in recentpost %}
+
+                <div class="col-md-3 pb-4">
+                    <div class="img">
+                        <img src="{{x.header_img.url }}" class="img-fluid imgn" alt="">
+                    </div>
+                    <div class="details">
+                        <a href="#" class="cats">SKINCARE</a>
+                        <a href="#" class="date">4 days ago</a>
+                        <h3 class="heading">{{x.title}}</h3>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+                
+            </div>
+        </div>
+
+       
+            </div>
+        </div>
+
+
+
+        <!--end-->
+
+
+       {% endblock body %}
